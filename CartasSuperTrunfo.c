@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int main() {
-   
+int main(){
     char estado1[2], codigo1[4], nomeCidade1[20], estado2[2], codigo2[4], nomeCidade2[20];
     int populacao1, numPontosTuristicos1, populacao2, numPontosTuristicos2;
     float area1, pib1, area2, pib2;
@@ -54,6 +53,14 @@ int main() {
     printf("Digite o número de pontos turísticos da segunda carta: \n");
     scanf("%d", &numPontosTuristicos2);
 
+    // Cálculo de variáveis
+
+    float densidadePopulacional1 = (float) populacao1 / area1;
+    float densidadePopulacional2 = (float) populacao2 / area2;
+
+    float pibPerCapita1 = pib1 * (1e9) / (float) populacao1;
+    float pibPerCapita2 = pib2 * (1e9) / (float) populacao2;
+
     //Impressão dos dados
 
     printf("\n Suas cartas são: \n \n");
@@ -64,9 +71,11 @@ int main() {
     printf("Código: %s \n", codigo1);
     printf("Nome da Cidade: %s \n", nomeCidade1);
     printf("População: %d \n", populacao1);
-    printf("Área: %2.f km2 \n", area1);
-    printf("PIB: %2.f bilhões de reais \n", pib1);
-    printf("Número de Pontos Turísticos: %d \n \n", numPontosTuristicos1);
+    printf("Área: %.2f km2 \n", area1);
+    printf("PIB: %.2f bilhões de reais \n", pib1);
+    printf("Número de Pontos Turísticos: %d \n", numPontosTuristicos1);
+    printf("Densidade Populacional: %.2f hab/km2 \n", densidadePopulacional1);
+    printf("PIB per Capita: %.2f reais \n \n", pibPerCapita1);
     
     //Segunda carta
     printf("Carta 2: \n");
@@ -74,9 +83,12 @@ int main() {
     printf("Código: %s \n", codigo2);
     printf("Nome da Cidade: %s \n", nomeCidade2);
     printf("População: %d \n", populacao2);
-    printf("Área: %2.f km2 \n", area2);
-    printf("PIB: %2.f bilhões de reais \n", pib2);
+    printf("Área: %.2f km2 \n", area2);
+    printf("PIB: %.2f bilhões de reais \n", pib2);
     printf("Número de Pontos Turísticos: %d \n", numPontosTuristicos2);
-    
+    printf("Densidade Populacional: %.2f hab/km2 \n", densidadePopulacional2);
+    printf("PIB per Capita: %.2f reais \n \n", pibPerCapita2);
+
     return 0;
+
 }
